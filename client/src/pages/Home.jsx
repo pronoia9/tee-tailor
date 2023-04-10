@@ -29,7 +29,7 @@ const Home = () => {
                 <strong>Unleash your imagination</strong> and define your own style.
               </p>
 
-              <CustomButton />
+              <CustomButton customStyles='w-fit px-4 py-2.5 font-bold text-sm' type='filled' title='Customize It' handleClick={() => state.intro = false} />
             </motion.div>
           </motion.div>
         </motion.section>

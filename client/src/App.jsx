@@ -5,9 +5,12 @@ import Home from './pages/Home';
 function App() {
 
   return (
-    <div className='App'>
+    <main className='App'>
       <h1 className='head-text'>React App</h1>
-    </div>
+      <Home />
+      <Canvas />
+      <Customizer />
+    </main>
   );
 }
 

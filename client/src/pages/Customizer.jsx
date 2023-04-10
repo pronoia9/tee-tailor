@@ -7,6 +7,7 @@ import config from '../config/config';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
 import { downloadCanvasToImage, reader } from '../config/helpers';
 import { fadeAnimation, slideAnimation } from '../config/motion';
+import { AIPicker, ColorPicker, CustomButton, FilePicker, Tab } from '../components';
 import { download } from '../assets';
 
 const Customizer = () => {

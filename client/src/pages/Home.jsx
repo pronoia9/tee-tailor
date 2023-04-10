@@ -11,9 +11,18 @@ const Home = () => {
     <AnimatePresence>
       {snap.intro && (
         <motion.section className='home' {...slideAnimation('left')}>
-          <motion.header>
+          <motion.header {...slideAnimation('down')}>
             <img className='w-8 h-8 object-contain' src='./logo.png' alt='logo' />
           </motion.header>
+
+          <motion.div className='home-content' {...headContainerAnimation}>
+            <motion.div {...headTextAnimation}>
+              <h1 className='head-text'>
+                LET'S <br className='xl:block hidden' />
+                DO IT.
+              </h1>
+            </motion.div>
+          </motion.div>
         </motion.section>
       )}
     </AnimatePresence>

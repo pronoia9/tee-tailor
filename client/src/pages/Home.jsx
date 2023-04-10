@@ -6,8 +6,18 @@ import { headContainerAnimation, headContentAnimation, headTextAnimation, slideA
 
 const Home = () => {
   const snap = useSnapshot(state);
-  
-  return <div>Home</div>;
+
+  return (
+    <AnimatePresence>
+      {snap.intro && (
+        <motion.section className='home' {...slideAnimation('left')}>
+          <motion.header>
+            <img className='w-8 h-8 object-contain' src='./logo.png' alt='logo' />
+          </motion.header>
+        </motion.section>
+      )}
+    </AnimatePresence>
+  );
 };
 
 export default Home;

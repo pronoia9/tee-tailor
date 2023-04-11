@@ -17,6 +17,7 @@ const Customizer = () => {
     <AnimatePresence>
       {!snap.intro && (
         <>
+          {/* Editor Tabs */}
           <motion.div className='absolute top-0 left-0 z-10' key='custom' {...slideAnimation('left')}>
             <div className='flex items-center min-h-screen'>
               <div className='editortabs-container tabs'>
@@ -37,7 +38,7 @@ const Customizer = () => {
             />
           </motion.div>
 
-          {/*  */}
+          {/*  Filter Tabs */}
           <motion.div className='filtertabs-container' {...slideAnimation('up')}>
             {FilterTabs.map((tab) => (
               <Tab key={tab.name} tab={tab} isFilterTab isActiveTab='' handleClick={() => {}} />

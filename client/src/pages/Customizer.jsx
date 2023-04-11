@@ -17,7 +17,7 @@ const Customizer = () => {
     <AnimatePresence>
       {!snap.intro && (
         <>
-          <motion.div className='absoule top-0 left-0 z-10' key='custom' {...slideAnimation('left')}>
+          <motion.div className='absolute top-0 left-0 z-10' key='custom' {...slideAnimation('left')}>
             <div className='flex items-center min-h-screen'>
               <div className='editortabs-container tabs'>
                 {EditorTabs.map((tab) => (

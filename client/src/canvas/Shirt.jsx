@@ -7,13 +7,17 @@ import { Decal, useGLTF, useTexture } from '@react-three/drei';
 import state from '../store';
 
 const Shirt = () => {
-  const snap = useSnapshot(state);
+  const snap = useSnapshot(state), stateString = JSON.stringify(snap);
   const { nodes, materials } = useGLTF('/shirt_baked.glb'),
     logoTexture = useTexture(snap.logoDecal),
     fullTexture = useTexture(snap.fullDecal);
 
+  useFrame((state, delta) => {
+    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
+  });
+
   return (
-    <group>
+    <group key={stateString}>
       <mesh
         castShadow
         geometry={nodes.T_Shirt_male.geometry}

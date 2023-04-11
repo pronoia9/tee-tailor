@@ -12,9 +12,7 @@ const Shirt = () => {
     logoTexture = useTexture(snap.logoDecal),
     fullTexture = useTexture(snap.fullDecal);
 
-  useFrame((state, delta) => {
-    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta);
-  });
+  useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.25, delta));
 
   return (
     <group key={stateString}>

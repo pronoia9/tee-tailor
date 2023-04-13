@@ -11,6 +11,11 @@ const FilePicker = ({ file, setFile, readFile }) => {
 
         <p className='mt-2 text-gray-500 text-xs truncate'>{file === '' ? 'No file selected' : file.name}</p>
       </div>
+
+      <div className='mt-4 flex flex-wrap gap-3'>
+        <CustomButton type='outline' title='Logo' customStyles='text-xs' handleClick={() => readFile('logo')} />
+        <CustomButton type='filled' title='Full' customStyles='text-xs' handleClick={() => readFile('full')} />
+      </div>
     </div>
   );
 };

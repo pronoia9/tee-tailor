@@ -12,10 +12,9 @@ const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
       />
-
       <div className='flex flex-wrap gap-3'>
         {generatingImg ? (
-          <CustomButton type='outline' title={'Asking AI...'} customStyles='text-xs' />
+          <CustomButton type='outline' title='Asking AI...' customStyles='text-xs' />
         ) : (
           <>
             <CustomButton type='outline' title='AI Logo' handleClick={() => handleSubmit('logo')} customStyles='text-xs' />

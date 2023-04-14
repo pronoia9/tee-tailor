@@ -35,7 +35,14 @@ const Customizer = () => {
   const handleSubmit = async (type) => {
     if (!prompt) return alert('Please enter a prompt.');
     try {
-      // call backend to generate an ai image
+      setGeneratingImg(true);
+      const response = await fetch(import.meta.env.VITE_BACKEND_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt, }),
+      });
+      const data = await response.json();
+      handleDecals(type, `data:image/png;base64,${data.photo}`);
     } catch (error) {
       alert(error);
     } finally {

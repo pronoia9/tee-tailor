@@ -39,7 +39,7 @@ const Customizer = () => {
       const response = await fetch(import.meta.env.VITE_BACKEND_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt, }),
+        body: JSON.stringify({ prompt }),
       });
       const data = await response.json();
       handleDecals(type, `data:image/png;base64,${data.photo}`);
@@ -62,12 +62,13 @@ const Customizer = () => {
       case 'logoShirt':
         state.isLogoTexture = !activeFilterTab[tabName];
         break;
-      case 'stylistShirt':
+      case 'stylishShirt':
         state.isFullTexture = !activeFilterTab[tabName];
         break;
       default:
         state.isLogoTexture = true;
         state.isFullTexture = false;
+        break;
     }
 
     // after setting the state, activeFilterTab is updated
@@ -75,8 +76,10 @@ const Customizer = () => {
   };
 
   const readFile = (type) => {
-    reader(file).then((result) => handleDecals(type, result));
-    setActiveEditorTab('');
+    reader(file).then((result) => {
+      handleDecals(type, result);
+      setActiveEditorTab('');
+    });
   };
 
   return (

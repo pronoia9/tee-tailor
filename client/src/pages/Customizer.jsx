@@ -119,6 +119,10 @@ const Customizer = () => {
                 handleClick={() => handleActiveFilterTab(tab.name)}
               />
             ))}
+            {/* Download Button */}
+            <button className='download-btn' onClick={downloadCanvasToImage}>
+              <img className='w-3/5 h-3/5 object-contain' src={download} alt='download_image' />
+            </button>
           </motion.div>
         </>
       )}

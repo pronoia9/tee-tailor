@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import { Environment, Center } from '@react-three/drei';
+import { Environment, Center, Stage } from '@react-three/drei';
 
 import Shirt from './Shirt';
 import Backdrop from './Backdrop';
@@ -11,9 +11,11 @@ const CanvasModel = () => {
       className='w-full max-w-full h-full transition-all ease-in'
       shadows
       camera={{ position: [0, 0, 0], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}>
+      gl={{ preserveDrawingBuffer: true }}
+    >
       <ambientLight intensity={0.5} />
-      <Environment preset='city' />
+      {/* <Environment preset='city' /> */}
+      <Stage environment={{ files: 'potsdamer_platz_1k.hdr' }} center />
 
       <CameraRig>
         <Backdrop />
